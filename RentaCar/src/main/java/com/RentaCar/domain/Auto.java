@@ -7,31 +7,30 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "autos")
+@Table(name = "vehiculo")
 public class Auto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long autoId;
+    private Long vehiculo_id;
 
     private String marca;
     private String modelo;
-    private String anhio;
-    private double precio;
+    private String tipo_vehiculo;
     private boolean disponible;
-    private String rutaImagen;
+    private int anio;
+    private String placa;
+    private String trasmicion;
+    private String ruta_imagen;
 
-    @ManyToOne
-    @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
-
-    public Auto(String marca, String modelo, String anhio, double precio, boolean disponible, String rutaImagen, Categoria categoria) {
+    public Auto(String marca, String modelo, String tipo_vehiculo, boolean disponible, int anio, String placa, String trasmicion, String ruta_imagen) {
         this.marca = marca;
         this.modelo = modelo;
-        this.anhio = anhio;
-        this.precio = precio;
+        this.tipo_vehiculo = tipo_vehiculo;
         this.disponible = disponible;
-        this.rutaImagen = rutaImagen;
-        this.categoria = categoria;
+        this.anio = anio;
+        this.placa = placa;
+        this.trasmicion = trasmicion;
+        this.ruta_imagen = ruta_imagen;
     }
-}
+ }

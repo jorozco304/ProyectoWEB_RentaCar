@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import java.sql.Date;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "usuario")
 @Data
 @NoArgsConstructor
 public class Usuario {
@@ -17,35 +17,35 @@ public class Usuario {
     @Column(name = "usuario_id")
     private Long id;
 
+   private int usuario_id;
     private String nombre;
     private String correo;
     private String contrasenha;
+    private Date fecha_nacimiento;
     private String direccion;
     private String telefono;
     private String ciudad;
     private String pais;
-    private String fotoPerfil;
+    private String foto_perfil;
+    private String tipo_licencia;
 
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
 
-    @ManyToOne
-    @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
-
-    public Usuario(String nombre, String correo, String contrasenha, Categoria categoria, Date fechaNacimiento, String direccion,
-                   String telefono, String ciudad, String pais, String fotoPerfil) {
-
+    public Usuario(Long id, int usuario_id, String nombre, String correo, String contrasenha, Date fecha_nacimiento, String direccion, String telefono, String ciudad, String pais, String foto_perfil, String tipo_licencia, Date fechaNacimiento) {
+        this.id = id;
+        this.usuario_id = usuario_id;
         this.nombre = nombre;
         this.correo = correo;
         this.contrasenha = contrasenha;
-        this.categoria = categoria;
-        this.fechaNacimiento = fechaNacimiento;
+        this.fecha_nacimiento = fecha_nacimiento;
         this.direccion = direccion;
         this.telefono = telefono;
         this.ciudad = ciudad;
         this.pais = pais;
-        this.fotoPerfil = fotoPerfil;
+        this.foto_perfil = foto_perfil;
+        this.tipo_licencia = tipo_licencia;
+        this.fechaNacimiento = fechaNacimiento;
     }
 }
 
