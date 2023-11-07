@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/plantilla :: head"></head>
+
+<body>
+
+<section>
+    <img src="https://www.zim-rentacar.com/assets/img/blog/rent-a-car-zim-beograd-za-inostranstvo935454705.jpg"
+         class="img-fluid" style="max-height: 400px; width: 100%" alt="Background Imagen Autos">
+</section>
+
+<header th:replace="layout/plantilla :: header"></header>
+
+
+<section class="p-3 m-0 border-0 bd-example m-0 border-0" style="overflow-x: auto;">
+    <div class="d-flex justify-content-start">
+
+        <section th:replace="index/fragmentosIndex :: listaVehiculosRenta"></section>
+        <section th:replace="index/fragmentosIndex :: listaVehiculosRenta"></section>
+        <section th:replace="index/fragmentosIndex :: listaVehiculosRenta"></section>
+        <section th:replace="index/fragmentosIndex :: listaVehiculosRenta"></section>
+        <section th:replace="index/fragmentosIndex :: listaVehiculosRenta"></section>
+        <section th:replace="index/fragmentosIndex :: listaVehiculosRenta"></section>
+
+    </div>
+</section>
+
+</body>
 </html>

@@ -1,16 +1,71 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+
+
+<body>
+
+<header th:fragment="header" class="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #6892e5; font-family: 'Comic Sans MS',sans-serif">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center " >
+                <a class="navbar-brand p-3 fs-2"  href="../index.html">[[#{aplicacion.titulo}]]</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold fs-5 m-lg-3"  aria-current="page" href="#">[[#{link.iniciarsesion}]]</a>
+                    </li>
+                    <li class="nav-item dropdown fw-bold fs-5 m-lg-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            [[#{nosotros}]]
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item fs-5" href="#">Action</a></li>
+                            <li><a class="dropdown-item fs-5" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class a="dropdown-item fs-5" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item fw-bold fs-5 m-lg-3">
+                        <a class="nav-link" href="#">[[#{link.autos}]]</a>
+                    </li>
+                    <li class="nav-item fw-bold fs-5 m-lg-3">
+                        <a class="nav-link" href="#">[[#{link.ventaAutos}]]</a>
+                    </li>
+                    <li class="nav-item fw-bold fs-5 m-lg-3">
+                        <a class="nav-link" href="#">[[#{link.resenha}]]</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+</section>
+
+
+
+
+
+</body>
 </html>
