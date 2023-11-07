@@ -43,4 +43,14 @@ public class AutoServiceImpl implements AutoService {
     public void delete(Auto auto) {
         autoDao.delete(auto);
     }
+
+    @Override
+    public List<Auto> getAutos(boolean activos) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Auto getAuto(Auto auto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
