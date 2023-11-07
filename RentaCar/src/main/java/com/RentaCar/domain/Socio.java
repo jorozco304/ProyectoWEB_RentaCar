@@ -22,16 +22,16 @@ public class Socio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private Long socioId;
 
-    private int usuario_id;
+    private int usuarioId;
         
     @Temporal(TemporalType.DATE)
-    private Date fecha_afiliacion;
+    private Date fechaAfiliacion;
 
-    public Socio(int usuario_id, Date fecha_afiliacion) {
-        this.usuario_id = usuario_id;
-        this.fecha_afiliacion = fecha_afiliacion;
+    public Socio(int usuarioId, Date fechaAfiliacion) {
+        this.usuarioId = usuarioId;
+        this.fechaAfiliacion = fechaAfiliacion;
     }
     
     

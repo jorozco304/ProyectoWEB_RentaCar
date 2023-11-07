@@ -1,24 +1,28 @@
 
 package com.RentaCar.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "ubicacionoficina")
+@Table(name = "ubicacion_oficina")
 public class UbicacionOficina {
-    
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
     private String nombre;
     private String direccion;
+    private String url;
 
-    public UbicacionOficina(String nombre, String direccion) {
+    public UbicacionOficina(String nombre, String direccion, String url) {
         this.nombre = nombre;
         this.direccion = direccion;
+        this.url = url;
     }
  
 }

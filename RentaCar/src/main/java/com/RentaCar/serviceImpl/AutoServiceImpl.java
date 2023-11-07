@@ -23,12 +23,12 @@ public class AutoServiceImpl implements AutoService {
         List<Auto> listaAutos = autoDao.findAll();
 
         //Autos en Renta
-        if (categoriaAuto.getId() == 1) {
-            listaAutos.removeIf(categoriaauto -> categoriaauto.getCategoria().getId() != 1);
+        if (categoriaAuto.getCategoriaId() == 1) {
+            listaAutos.removeIf(categoriaauto -> categoriaauto.getCategoria().getCategoriaId() != 1);
         }
         //Autos en Venta
-        if (categoriaAuto.getId() == 2) {
-            listaAutos.removeIf(categoriaauto -> categoriaauto.getCategoria().getId() != 2);
+        if (categoriaAuto.getCategoriaId() == 2) {
+            listaAutos.removeIf(categoriaauto -> categoriaauto.getCategoria().getCategoriaId() != 2);
         }
 
         return listaAutos;

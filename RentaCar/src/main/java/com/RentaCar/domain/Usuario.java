@@ -15,37 +15,36 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "usuario_id")
-    private Long id;
+    private long usuarioId;
 
-   private int usuario_id;
     private String nombre;
     private String correo;
     private String contrasenha;
-    private Date fecha_nacimiento;
-    private String direccion;
-    private String telefono;
-    private String ciudad;
-    private String pais;
-    private String foto_perfil;
-    private String tipo_licencia;
 
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
 
-    public Usuario(Long id, int usuario_id, String nombre, String correo, String contrasenha, Date fecha_nacimiento, String direccion, String telefono, String ciudad, String pais, String foto_perfil, String tipo_licencia, Date fechaNacimiento) {
-        this.id = id;
-        this.usuario_id = usuario_id;
+    private String direccion;
+    private String telefono;
+    private String ciudad;
+    private String pais;
+    private String fotoPerfil;
+    private String tipoLicencia;
+
+
+    public Usuario(String nombre, String correo, String contrasenha, Date fechaNacimiento, String direccion,
+                   String telefono, String ciudad, String pais, String fotoPerfil, String tipoLicencia) {
+
         this.nombre = nombre;
         this.correo = correo;
         this.contrasenha = contrasenha;
-        this.fecha_nacimiento = fecha_nacimiento;
+        this.fechaNacimiento = fechaNacimiento;
         this.direccion = direccion;
         this.telefono = telefono;
         this.ciudad = ciudad;
         this.pais = pais;
-        this.foto_perfil = foto_perfil;
-        this.tipo_licencia = tipo_licencia;
-        this.fechaNacimiento = fechaNacimiento;
+        this.fotoPerfil = fotoPerfil;
+        this.tipoLicencia = tipoLicencia;
     }
 }
 
