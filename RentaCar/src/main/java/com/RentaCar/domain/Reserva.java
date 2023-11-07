@@ -3,7 +3,13 @@ package com.RentaCar.domain;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Entity
+@Data
+@NoArgsConstructor
+@Table(name = "reserva")
 public class Reserva {
 
     @Id

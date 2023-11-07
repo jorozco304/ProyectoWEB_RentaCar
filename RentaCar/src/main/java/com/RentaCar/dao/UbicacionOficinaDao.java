@@ -4,10 +4,13 @@
  */
 package com.RentaCar.dao;
 
+import com.RentaCar.domain.UbicacionOficina;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  *
  * @author Usuario
  */
-public interface UbicacionOficinaDao {
+public interface UbicacionOficinaDao extends JpaRepository<UbicacionOficina, Long>{
     
 }

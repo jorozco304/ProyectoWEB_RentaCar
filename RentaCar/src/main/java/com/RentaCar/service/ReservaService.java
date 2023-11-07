@@ -4,10 +4,21 @@
  */
 package com.RentaCar.service;
 
+import com.RentaCar.domain.Reserva;
+import java.util.List;
+
 /**
  *
  * @author Usuario
  */
 public interface ReservaService {
+    
+        public List<Reserva> getReservas(boolean activos);
+    
+    public Reserva getReserva(Reserva reserva);
+
+    public void save(Reserva reserva);
+
+    public void delete(Reserva reserva);
     
 }

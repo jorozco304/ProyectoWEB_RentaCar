@@ -4,10 +4,13 @@
  */
 package com.RentaCar.dao;
 
+import com.RentaCar.domain.Reserva;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  *
  * @author Usuario
  */
-public interface ReservaDao {
+public interface ReservaDao extends JpaRepository<Reserva, Long>{
     
 }

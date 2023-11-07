@@ -2,14 +2,15 @@ package com.RentaCar.service;
 
 
 import com.RentaCar.domain.Auto;
-import com.RentaCar.domain.Categoria;
 
 import java.util.List;
 
 
 public interface AutoService {
 
-    public List<Auto> getAutos(Categoria categoriaAuto);
+    public List<Auto> getAutos(boolean activos);
+    
+    public Auto getAuto(Auto auto);
 
     public void save(Auto auto);
 
