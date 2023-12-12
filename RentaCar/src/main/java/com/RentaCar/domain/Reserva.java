@@ -17,14 +17,14 @@ public class Reserva {
     private long reservaId;
 
     private Usuario usuarioId;
-    private Auto autoId;
+    private Carro autoId;
         
     @Temporal(TemporalType.DATE)
     private Date fechaReservaInicio;
     @Temporal(TemporalType.DATE)
     private Date fechaReservaFinal;
 
-    public Reserva(Usuario usuarioId, Auto autoId, Date fechaReservaInicio, Date fechaReservaFinal) {
+    public Reserva(Usuario usuarioId, Carro autoId, Date fechaReservaInicio, Date fechaReservaFinal) {
 
         this.usuarioId = usuarioId;
         this.autoId = autoId;

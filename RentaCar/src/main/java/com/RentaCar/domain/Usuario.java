@@ -1,51 +1,38 @@
 package com.RentaCar.domain;
 
 import jakarta.persistence.*;
+import java.io.Serializable;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.List;
+import javax.validation.constraints.NotEmpty;
 
-import java.sql.Date;
-
-@Entity
-@Table(name = "usuario")
 @Data
-@NoArgsConstructor
-public class Usuario {
-
+@Entity
+@Table (name="usuario")
+public class Usuario implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "usuario_id")
-    private long usuarioId;
-
+    @Column(name = "id_usuario")
+    private Long idUsuario;
+    
+    @NotEmpty
+    private String username;
+    @NotEmpty
+    private String password;
+    @NotEmpty
     private String nombre;
+    @NotEmpty
+    private String apellidos;
     private String correo;
-    private String contrasenha;
-
-    @Temporal(TemporalType.DATE)
-    private Date fechaNacimiento;
-
-    private String direccion;
     private String telefono;
-    private String ciudad;
-    private String pais;
-    private String fotoPerfil;
-    private String tipoLicencia;
-
-
-    public Usuario(String nombre, String correo, String contrasenha, Date fechaNacimiento, String direccion,
-                   String telefono, String ciudad, String pais, String fotoPerfil, String tipoLicencia) {
-
-        this.nombre = nombre;
-        this.correo = correo;
-        this.contrasenha = contrasenha;
-        this.fechaNacimiento = fechaNacimiento;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.ciudad = ciudad;
-        this.pais = pais;
-        this.fotoPerfil = fotoPerfil;
-        this.tipoLicencia = tipoLicencia;
-    }
+    private String imagen;
+    private boolean activo;
+    
+    @OneToMany
+    @JoinColumn(name = "id_usuario")
+    private List<Rol> roles;
 }
-
 

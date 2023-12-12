@@ -1,24 +1,39 @@
 package com.RentaCar.domain;
 
 import jakarta.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table(name = "categoria")
-@NoArgsConstructor
-public class Categoria {
+public class Categoria implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "categoria_id")
-    private Long categoriaId;
-    private String nombre;
+    @Column(name = "id_categoria")
+    private Long idCategoria; 
+    private String descripcion;
+    private String imagen;
+    private boolean activo;
+    
+    @OneToMany
+    @JoinColumn(name="id_categoria", insertable = false, updatable = false)
+    List<Carro> carros;
 
-
-    public Categoria(String nombre) {
-        this.nombre = nombre;
+    public Categoria() {
     }
+
+    public Categoria(String descripcion, String imagen, boolean activo, List<Carro> carros) {
+        this.descripcion = descripcion;
+        this.imagen = imagen;
+        this.activo = activo;
+        this.carros = carros;
+    }
+    
+    
 }
 
