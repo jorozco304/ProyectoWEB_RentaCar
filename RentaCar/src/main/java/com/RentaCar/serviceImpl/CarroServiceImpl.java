@@ -44,8 +44,8 @@ public class CarroServiceImpl implements CarroService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<Carro> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup) {
-        return carroDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+    public List<Carro> findByPrecioBetweenOrderByDetalle(double precioInf, double precioSup) {
+        return carroDao.findByPrecioBetweenOrderByDetalle(precioInf, precioSup);
     }
     
     @Override

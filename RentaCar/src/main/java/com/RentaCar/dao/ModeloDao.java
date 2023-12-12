@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface ModeloDao extends JpaRepository<Modelo, Long>{
-    List<Modelo> findByDescripcionContainingIgnoreCase (String descripcion);
+    List<Modelo> findByModeloContainingIgnoreCase (String modelo);
 }

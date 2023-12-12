@@ -17,7 +17,7 @@ public interface CarroService {
     
     public void delete (Carro carro);
 
-    public List<Carro> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup);
+    public List<Carro> findByPrecioBetweenOrderByDetalle(double precioInf, double precioSup);
     
     public List<Carro> metodoJPQL(double precioInf, double precioSup);
     

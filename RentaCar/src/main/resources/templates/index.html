@@ -1,17 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
-<head th:replace="layout/plantilla :: head"></head>
-
-<body>
-
-<section>
-    <img src="https://www.zim-rentacar.com/assets/img/blog/rent-a-car-zim-beograd-za-inostranstvo935454705.jpg"
-         class="img-fluid" style="max-height: 400px; width: 100%" alt="Background Imagen Autos">
-</section>
-
-<header th:replace="layout/plantilla :: header"></header>
-
-
-</body>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>RentACar</title>        
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+        <section th:replace="~{carrito/fragmentos :: listadoCarros}"/>
+        <footer th:replace="~{layout/plantilla :: footer}"/>          
+    </body>
 </html>

@@ -9,14 +9,14 @@ import org.springframework.data.repository.query.Param;
 public interface CarroDao extends JpaRepository<Carro, Long> {
     
         //Ejemplo de método utilizando Métodos de Query
-    public List<Carro> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup);
+    public List<Carro> findByPrecioBetweenOrderByDetalle(double precioInf, double precioSup);
     
     //Ejemplo de método utilizando Consultas con JPQL
-    @Query(value="SELECT a FROM Carro a where a.precio BETWEEN :precioInf AND :precioSup ORDER BY a.descripcion ASC")
+    @Query(value="SELECT a FROM Carro a where a.precio BETWEEN :precioInf AND :precioSup ORDER BY a.detalle ASC")
     public List<Carro> metodoJPQL(@Param("precioInf") double precioInf, @Param("precioSup") double precioSup);
     
     //Ejemplo de método utilizando Consultas con SQL nativo
     @Query(nativeQuery=true,
-            value="SELECT * FROM carro where carro.precio BETWEEN :precioInf AND :precioSup ORDER BY carro.descripcion ASC")
+            value="SELECT * FROM carro where carro.precio BETWEEN :precioInf AND :precioSup ORDER BY carro.detalle ASC")
     public List<Carro> metodoNativo(@Param("precioInf") double precioInf, @Param("precioSup") double precioSup); 
 }
